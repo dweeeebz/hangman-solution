@@ -45,10 +45,7 @@ class Hangman:
         # TODO 2: Print two message upon initialization:
         # 1. "The mistery word has {num_letters} characters"
         # 2. {word_guessed}
-        self.word_list = word_list
-        self.num_lives = num_lives
-        print(f"The mistery word has {num_letters} characters\n {word_guessed}")
-# %%
+        pass
 
     def check_letter(self, letter) -> None:
         '''
@@ -60,22 +57,14 @@ class Hangman:
         ----------
         letter: str
             The letter to be checked
+
         '''
         # TODO 3: Check if the letter is in the word. TIP: You can use the lower() method to convert the letter to lowercase
         # TODO 3: If the letter is in the word, replace the '_' in the word_guessed list with the letter
         # TODO 3: If the letter is in the word, the number of UNIQUE letters in the word that have not been guessed yet has to be reduced by 1
         # TODO 3: If the letter is not in the word, reduce the number of lives by 1
         # Be careful! A letter can contain the same letter more than once. TIP: Take a look at the index() method in the string class
-        letter = letter.lower()
-        if letter in word:
-            word[word.index(letter)] = letter
-            num_letters -= 1
-        else:
-            num_lives -= 1
-
         pass
-
-# %%
 
     def ask_letter(self):
         '''
@@ -89,16 +78,8 @@ class Hangman:
         # TODO 1: The letter has to comply with the following criteria: It has to be a single character. If it is not, print "Please, enter just one character"
         # TODO 2. It has to be a letter that has not been tried yet. Use the list_letters attribute to check this. If it has been tried, print "{letter} was already tried".
         # TODO 3: If the letter is valid, call the check_letter method
-        letter = input("Please enter a letter") 
-        if len(letter) > 1:
-            print("Please, enter just one character")
-            letter = input("Please enter a letter")
-        if letter in list_letters:
-            print(f"{letter}  was already tried") 
-        else:
-            check_letter(letter) 
-#
-# %%
+        pass
+
 def play_game(word_list):
     # As an aid, part of the code is already provided:
     game = Hangman(word_list, num_lives=5)
